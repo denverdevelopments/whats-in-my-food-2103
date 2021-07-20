@@ -21,7 +21,7 @@ gem 'figaro'
 
 group :development, :test do
   gem 'pry'
-  gem 'rspec-rails'
+  gem 'rspec-rails' ##
 end
 
 group :test do
@@ -29,6 +29,9 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
+
+  gem 'webmock' ##
+  gem 'vcr' ##
 end
 
 group :development do

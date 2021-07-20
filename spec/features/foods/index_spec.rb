@@ -19,14 +19,16 @@ RSpec.describe 'Search for foods' do
   it 'Can search for a food' do
 
     visit root_path
-    require "pry"; binding.pry
     fill_in :q, with: 'sweet potatoes'
     click_button 'Search'
+    # require "pry"; binding.pry
 
-    # expect(page).to have_content('GTIN/UPC code')
-    # expect(page).to have_content('description')
-    # expect(page).to have_content('Brand Owner')
-    # expect(page).to have_content('ingredient')
+    expect(page).to have_content('GTIN/UPC code: 492111402857')
+    expect(page).to have_content('Description: SWEET POTATOES')
+    expect(page).to have_content('Brand Owner: ARCHER FARMS')
+    expect(page).to have_content('Ingredients: SWEET POTATOES')
+
+    expect(page).to have_css('.foods', count: 10)
 
   end
 end
